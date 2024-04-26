@@ -27,7 +27,7 @@
     </style>
 </head>
 <body>
-    <form class="mb-5" action="" method="POST" enctype="multipart/form-data">
+    <form class="mb-5" action="{{route('form.create')}}" method="POST" enctype="multipart/form-data">
         @csrf
         <h1 class="text-center mt-5">Formulario</h1>
         <div class="col mx-5">
@@ -35,7 +35,7 @@
                 <div class="col-md-4">
                     <div class="mb-3">
                         <label for="es-anonima" class="form-label">Anónima o no anónima</label>
-                        <select class="form-select" id="es-anonima" aria-label="Petición Anónima o No Anónima">
+                        <select class="form-select" name="esAnonima" id="es-anonima" aria-label="Petición Anónima o No Anónima">
                             <option selected>Seleccione una opción</option>
                             <option value="TRUE">Anónima</option>
                             <option value="FALSE">No Anónima</option>
@@ -45,7 +45,7 @@
                 <div class="col-md-4">
                     <div class="mb-3">
                         <label for="tipo-peticion" class="form-label">Tipo PQRSD</label>
-                        <select class="form-select" id="tipo-peticion" aria-label="Tipo de petición">
+                        <select class="form-select" name="tipoPqrsd" id="tipo-peticion" aria-label="Tipo de petición">
                             <option selected>Seleccione una opción</option>
                             <option value="peticion">Petición</option>
                             <option value="queja">Queja</option>
@@ -58,7 +58,7 @@
                 <div class="col-md-4">
                     <div class="mb-3">
                         <label for="tipo-persona" class="form-label">Tipo de Persona</label>
-                        <select class="form-select" id="tipo-persona" aria-label="Tipo de Persona">
+                        <select class="form-select" name="tipoPersona" id="tipo-persona" aria-label="Tipo de Persona">
                             <option selected>Seleccione una opción</option>
                             <option value="natural">Natural</option>
                             <option value="juridica">Jurídica</option>
@@ -75,19 +75,19 @@
         <div class="datos-personales mx-5">
             <div class="mb-0">
                 <label for="name" class="form-label">Primer Nombre</label>
-                <input type="text" class="form-control" id="name" placeholder="Ejemplo: Juan">
+                <input type="text" name="primerNombre" class="form-control" id="name" placeholder="Ejemplo: Juan">
             </div>
             <div class="mb-0">
                 <label for="name2" class="form-label">Segundo Nombre</label>
-                <input type="text" class="form-control" id="name2" placeholder="Ejemplo: Carlos">
+                <input type="text" name="segundoNombre" class="form-control" id="name2" placeholder="Ejemplo: Carlos">
             </div>
             <div class="mb-0">
                 <label for="last-name" class="form-label">Primer Apellido</label>
-                <input type="text" class="form-control" id="last-name" placeholder="Ejemplo: Vélez">
+                <input type="text" name="primerApellido" class="form-control" id="last-name" placeholder="Ejemplo: Vélez">
             </div>
             <div class="mb-0">
                 <label for="last-name2" class="form-label">Segundo Apellido</label>
-                <input type="text" class="form-control" id="last-name2" placeholder="Ejemplo: Posada">
+                <input type="text" name="segundoApellido" class="form-control" id="last-name2" placeholder="Ejemplo: Posada">
             </div>
             <div class="mb-0">
                 <label for="tipo-documento" class="form-label">Tipo de Documento</label>
@@ -101,11 +101,11 @@
             </div>
             <div class="mb-0">
                 <label for="numero-identificacion" class="form-label">Número de Identificación</label>
-                <input type="number" class="form-control" id="numero-identificacion" placeholder="Número de identificación">
+                <input type="number" name="numeroIdentificacion" class="form-control" id="numero-identificacion" placeholder="Número de identificación">
             </div>
             <div class="mb-0">
                 <label for="fecha-nacimiento" class="form-label">Fecha de Nacimiento</label>
-                <input type="date" class="form-control" id="fecha-nacimiento">
+                <input type="date" name="fechaNacimiento" class="form-control" id="fecha-nacimiento">
             </div>
             <div class="mb-0">
                 <label for="genero" class="form-label">Género</label>
@@ -118,19 +118,19 @@
             </div>
             <div class="mb-0">
                 <label for="direccion" class="form-label">Dirección</label>
-                <input type="text" class="form-control" id="direccion" placeholder="Ejemplo: Cra 15 #20n-51">
+                <input type="text" name="direccion" class="form-control" id="direccion" placeholder="Ejemplo: Cra 15 #20n-51">
             </div>
             <div class="mb-0">
                 <label for="correo" class="form-label">Correo Electrónico</label>
-                <input type="email" class="form-control" id="correo" placeholder="Ejemplo: pepe@gmail.com">
+                <input type="email" name="correoElectronico" class="form-control" id="correo" placeholder="Ejemplo: pepe@gmail.com">
             </div>
             <div class="mb-0">
                 <label for="descripcion" class="form-label">Descripción de la Solicitud</label>
-                <textarea class="form-control" id="descripcion" rows="3"></textarea>
+                <textarea class="form-control" name="descripcion" id="descripcion" rows="3"></textarea>
             </div>
             <div class="mb-3">
                 <label for="archivo-adjunto" class="form-label">Adjuntar Archivo PDF</label>
-                <input class="form-control" type="file" id="archivo-adjunto">
+                <input class="form-control" name="urlPdf" type="file" id="archivo-adjunto">
             </div>
             <button type="submit" class="btn btn-primary">Enviar</button>
         </div>

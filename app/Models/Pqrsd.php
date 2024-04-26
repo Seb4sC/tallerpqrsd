@@ -7,5 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Pqrsd extends Model
 {
-    use HasFactory;
+    protected $fillable = [
+        'idCliente',
+        'correoElectronico',
+        'esAnonima',
+        'tipoPqrsd',
+        'tipoPersona',
+        'descripcion',
+        'urlPdf',
+        'estado',
+    ];
 }

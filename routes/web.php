@@ -8,3 +8,4 @@ Route::get('/', function () {
 });
 
 Route::get('/formulario', [FormularioController::class, 'show']);
+Route::post('/formulario/crear-pqrsd', [FormularioController::class, 'create'])->name('form.create');
